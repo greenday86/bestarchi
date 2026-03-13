@@ -19,16 +19,16 @@
 
 ```mermaid
 flowchart TB
- U[사용자/클라이언트] --> G[API Gateway/Ingress]
- G --> A[에이전트 서비스/툴 서비스]
- A --> W[워크플로우/파이프라인]
- A --> S[모델 서빙/추론]
+ U["사용자/클라이언트"] --> G["API Gateway/Ingress"]
+ G --> A["에이전트 서비스/툴 서비스"]
+ A --> W["워크플로우/파이프라인"]
+ A --> S["모델 서빙/추론"]
  W --> S
  A --> D[(데이터/아티팩트 저장·배포)]
  S --> D
 
- subgraph INF[인프라·클러스터 오케스트레이션]
- K8S[Kubernetes 등]
+ subgraph INF["인프라·클러스터 오케스트레이션"]
+ K8S["Kubernetes 등"]
  end
  INF --> G
  INF --> A
@@ -36,9 +36,9 @@ flowchart TB
  INF --> S
  INF --> D
 
- subgraph GOV[보안·정책·관찰성(횡단)]
- SEC[ID/정책/공급망/런타임 보안]
- OBS[메트릭/트레이스/로그]
+ subgraph GOV["보안·정책·관찰성(횡단)"]
+ SEC["ID/정책/공급망/런타임 보안"]
+ OBS["메트릭/트레이스/로그"]
  end
  SEC -.-> G
  SEC -.-> A
